@@ -8,7 +8,7 @@ function BodyContent() {
   const [started, setStarted] = React.useState(false);
 
 
-  const audio = React.useRef(new Audio());
+  const audio = React.useRef();
 
   // Functions:
   const clickHandler = () => {
@@ -175,6 +175,7 @@ function BodyContent() {
                   🔉
                 </button>
                 <p className="warning">Nice UI Only on Desktop</p>
+                <audio ref={audio} />
                 <p style={{marginTop: "10px", color: "rgba(255, 255, 255, 0.7)"}}>{formatTime(resData.timestamp)} / {formatTime(resData.duration)}</p>
               </div>
             )}
