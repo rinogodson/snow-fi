@@ -174,6 +174,7 @@ function BodyContent() {
                 <button style={{backgroundColor: "rgba(0,0,0,0)"}} onClick={mute} className="button">
                   🔉
                 </button>
+                <p className="warning">Nice UI Only on Desktop</p>
                 <p style={{marginTop: "10px", color: "rgba(255, 255, 255, 0.7)"}}>{formatTime(resData.timestamp)} / {formatTime(resData.duration)}</p>
               </div>
             )}
