@@ -219,8 +219,6 @@ body {
     .page {
         height: 100dvh;
         position: fixed;
-        overflow-y: clip;
-        overflow-x: clip;
         -webkit-overflow-scrolling: auto;
     }
 }
