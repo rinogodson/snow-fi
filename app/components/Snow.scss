@@ -9,7 +9,7 @@
 .snow {
     $total: 200;
     position: absolute;
-    width: 2px;
+    width: 4px;
     height: 3px;
     filter: blur(1px);
     background: white;
@@ -25,7 +25,7 @@
         $random-x-end-yoyo: $random-x + ($random-offset / 2);
         $random-yoyo-time: random_range(30000, 80000) / 100000;
         $random-yoyo-y: $random-yoyo-time * 100vh;
-        $random-scale: random(10000) * 0.0001;
+        $random-scale: random(10000) * 0.00007;
         $fall-delay: random(30) * -1s;
 
         &:nth-child(#{$i}) {

@@ -8,7 +8,7 @@ function BodyContent() {
   const [started, setStarted] = React.useState(false);
 
 
-  const audio = React.useRef();
+  const audio = React.useRef({src: "", currentTime: 0, volume: 1}); 
 
   // Functions:
   const clickHandler = () => {
@@ -35,8 +35,12 @@ function BodyContent() {
       });
   }
 
-  function mute() {
-    audio.current.muted = !audio.current.muted;
+  function changeVolume() {
+    if (audio.current.volume > 0) {
+      audio.current.volume = Math.round((audio.current.volume - 0.2)*100)/100;
+    } else {
+      audio.current.volume = 1;
+    }
   }
  let progress;
   function playSong(url, timestamp) {
@@ -130,13 +134,6 @@ function BodyContent() {
 
 
 
-  React.useEffect(() => {
-    // Cleanup interval on component unmount
-    return () => {
-      stopTrackingTime();
-    };
-  }, []);
-
 
 
   React.useEffect(() => {
@@ -157,8 +154,8 @@ function BodyContent() {
           <div className="top">
             <h1 className="logo">S N O W F I</h1>
 
-            <p style={{ color: "#fff" }}>{resData.song}</p>
-            <p style={{ fontSize: "28px", color: "rgba(255, 255, 255, 0.65)" }}>
+            <p className="song" style={{ color: "#fff" }}>{resData.song}</p>
+            <p className="artist" style={{ fontSize: "28px", color: "rgba(255, 255, 255, 0.65)" }}>
               {resData.artist}
             </p>
 
@@ -171,12 +168,13 @@ function BodyContent() {
             {!started && <Button onClick={clickHandler} />}
             {started && (
               <div className="controls">
-                <button style={{backgroundColor: "rgba(0,0,0,0)"}} onClick={mute} className="button">
-                  🔉
+                <button style={{backgroundColor: "rgba(0,0,0,0)", color: "gray"}} onClick={changeVolume} className="button">
+                 {audio.current.volume *100} 🔉
                 </button>
-                <p className="warning">Nice UI Only on Desktop</p>
+
                 <audio ref={audio} />
-                <p style={{marginTop: "10px", color: "rgba(255, 255, 255, 0.7)"}}>{formatTime(resData.timestamp)} / {formatTime(resData.duration)}</p>
+                <p className="time" style={{marginTop: "10px", color: "rgba(255, 255, 255, 0.7)"}}>{formatTime(resData.timestamp)}/{formatTime(resData.duration)}</p>
+                <div className="progress" style={{background:`linear-gradient(to right, white ${(resData.timestamp/resData.duration)*100}%, rgba(255,255,255,0.3) ${(resData.timestamp/resData.duration)*100}%)`}}></div>
               </div>
             )}
           </div>
