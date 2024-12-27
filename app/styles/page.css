@@ -36,7 +36,7 @@ body {
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(50px) saturate(2.5);
     z-index: 0;
-    box-shadow: inset 0 0 300px 50px rgb(0, 0, 0);
+    box-shadow: inset 0 0 300px 8   0px rgb(0, 0, 0);
 
 }
 
@@ -66,7 +66,7 @@ body {
     height: 600px;
     transform: scale(2);
     filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 18.9px rgba(0, 0, 0, 0.25));
-    border-radius: 40px;
+    box-shadow: inset 0 0 10px 0px #ffffff;
     z-index: 1;
     transition: all 0.3s ease-in-out;
 }
@@ -123,7 +123,7 @@ body {
     font-style: normal;
     font-weight: 100;
     font-size: 28px;
-    line-height: 37px;
+    line-height: 37px;  
     display: flex;
     align-items: center;
 
@@ -234,7 +234,8 @@ body {
 }
 .progress{
     width: 200px;
-    height: 8px;
+    height: 4px;
     border-radius: 1000px;
     filter: blur(1px);
+    border: solid 1px #ffffff63;
 }

@@ -9,7 +9,7 @@ function Snow({image}) {
         <div key={index} className="snow"></div>
       ))}
       <div className='content'>
-    <img className='cover' src={image} alt='Album Cover' style={{ width: '200px', height: '200px', borderRadius: '10px' }} />
+    <img className='cover' src={image} alt='Album Cover' style={{ width: '200px', height: '200px', borderRadius: '20px' }} />
       </div>
     </div>
   );

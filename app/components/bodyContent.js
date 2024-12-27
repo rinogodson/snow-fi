@@ -174,7 +174,7 @@ function BodyContent() {
 
                 <audio ref={audio} />
                 <p className="time" style={{marginTop: "10px", color: "rgba(255, 255, 255, 0.7)"}}>{formatTime(resData.timestamp)}/{formatTime(resData.duration)}</p>
-                <div className="progress" style={{background:`linear-gradient(to right, white ${(resData.timestamp/resData.duration)*100}%, rgba(255,255,255,0.3) ${(resData.timestamp/resData.duration)*100}%)`}}></div>
+                <div className="progress" style={{background:`linear-gradient(to right, white ${(resData.timestamp/resData.duration)*100}%, rgb(0, 0, 0, 0.3) ${(resData.timestamp/resData.duration)*100}%)`}}></div>
               </div>
             )}
           </div>
