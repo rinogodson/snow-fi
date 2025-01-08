@@ -35,6 +35,8 @@ Radio API: <a style="display:flex; flex-direction: row; justify-content: center;
   <img style="width: 30px" src="https://contrib.rocks/image?repo=rednotsus/lofi-radio" alt="contrib.rocks image" />
   rednotsus
 </a>
+Used GitHub Copilot (just for code suggestions)
+Used Figma for Designing.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
